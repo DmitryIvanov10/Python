@@ -11,16 +11,16 @@ x = 2.2
 
 #print results
 print ("Results for the number %2f :" % x)
-print
+print ()
 print ("Without limit on denominator")
 print (Fraction(x))
-print
+print ()
 print ("With limit on denominator")
 print (Fraction(x).limit_denominator())
-print
+print ()
 print ("Fraction from irrational number (Pi)")
 print (Fraction(math.pi))
-print
+print ()
 
 # check the system info about float numbers
 x = sys.float_info.max

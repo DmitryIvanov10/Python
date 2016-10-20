@@ -4,6 +4,7 @@
 # removes given chars from the beginning and the end of the string 
 stringForStrip = "fffHello World!ffff"
 print (stringForStrip.strip("f"))
+print()
 
 # isnumeric() method
 # checks whether the string consists of only numeric characters 
@@ -11,10 +12,12 @@ print (stringForStrip.strip("f"))
 # example with non numeric string
 stringForIsnumeric = u"asdj23jcv4"
 print (stringForIsnumeric.isnumeric())
+print()
 
 # example with numeric string
 stringForIsnumeric = u"234597345"
 print (stringForIsnumeric.isnumeric())
+print()
 
 # rjust() method 
 # return right justified string of given width adding given characters on the left (space as default)
