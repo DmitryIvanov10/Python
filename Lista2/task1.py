@@ -5,24 +5,18 @@ myTuple = (0, 1, 2, 3, 4, "five", "six", "seven", "eight", "nine")
  
 
 # print first Three 
-print ("First three elements:")
-for i in range(3): 
-    print (myTuple[i], end=" ")
-print ()
+print ("First three elements: ", end = '')
+print (myTuple[:3])
 print ()
 
 # print last two 
-print ("Last two elements:")
-for i in range(len(myTuple) - 2, len(myTuple)): 
-    print (myTuple[i], end=" ")
-print ()
+print ("Last two elements: ", end = '')
+print (myTuple[(len(myTuple)-2):])
 print ()
 
 # print each second starting with second 
-print ("Each second element starting with second:")
-for i in range(2, len(myTuple), 2): 
-    print (myTuple[i], end=" ")
-print ()
+print ("Each second element starting with second: ", end = '')
+print (myTuple[2::2])
 print ()
 
 # length of the tuple

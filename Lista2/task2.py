@@ -22,12 +22,13 @@ print ("Fourth student is %s" % students[3])
 print ()
 
 # print first two
-print ("First two students are %s and %s" % (students[0], students[1]))
+print ("First two students are: ", end ='')
+print(students[:2])
 print ()
 
 # print last two
-print ("Last two students are %s and %s" % (students[len(students) - 2] \
-                                           , students[len(students) - 1]))
+print ("Last two students are: ", end = '')
+print (students[(len(students)-2):])
 print ()
 
 # remove students with name Basia from the list

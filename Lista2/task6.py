@@ -5,6 +5,8 @@ import sys
 # check memory size 
 print ("Memory size of 0: %i" % sys.getsizeof(0))
 print ()
+print ("Memory size of 1: %i" % sys.getsizeof(1))
+print ()
 print ("Memory size of 2**100: %i" % sys.getsizeof(2**100))
 print ()
 print ("Memory size of 2**1000: %i" % sys.getsizeof(2**1000))
