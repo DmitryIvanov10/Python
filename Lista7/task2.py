@@ -4,6 +4,9 @@
 from sys import argv
 from temperatures import random_celsius_degree
 
+# max temperature in Celsius degrees
+max_T = 300
+
 # Check if user input is correct
 if len(argv) != 2:
     print ("Wrong amount of arguments.")
@@ -23,4 +26,4 @@ else:
 
         # add temperature data to file
         for i in range(n):
-            f.write("{}\n".format(random_celsius_degree()))
+            f.write("{}\n".format(random_celsius_degree(max_T)))

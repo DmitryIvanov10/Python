@@ -5,16 +5,18 @@ from sys import argv
 from os import path
 
 # Check if user input is correct
-if len(argv) < 2 and len(argv)>3:
+if len(argv)<2 or len(argv)>3:
     # check amount of arguments
     print ("Wrong amount of arguments.")
 else:
+    # get file name
     file_to_read = argv[1]
 
     # check if file exists
     if not path.isfile(file_to_read):
         print ("No such file.")
     else:
+        # default mode
         mode = 0
 
         # check for mode
@@ -40,4 +42,4 @@ else:
                         print (line)
             else:
                 for i, line in enumerate(f):
-                    print ("{}. {}".format(i, line))
+                    print ("{}. {}".format(i+1, line))
