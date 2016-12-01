@@ -1,0 +1,6 @@
+# Temperature in Fahrenheit
+236.84
+308.5
+-274.29
+329.09
+274.32
