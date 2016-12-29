@@ -16,24 +16,17 @@ def look_and_say(a1, n):
     a1 = bufer
     
     # create list to save all elements of th sequence
-    result = []
-    # add first element to ehe sequence
-    result.append(a1)
-    
-    # calculate other elements of the sequence
-    for i in range(1, n):
-        # a1 here would be the two dimensional array, where each pair is amount of numbers
-        a1 = [(len(list(amount)), number) for number,amount in groupby(list(a1))]
-        
-        # make one dimensional array to save into the element of the sequence
-        k = []
-        for j in range(len(a1)):
-            k.append(a1[j][0])
-            k.append(a1[j][1])
-        
-        a1 = list(k)
-        result.append(a1)
-        
+    result = [a1]
+
+    # fill result list with all n elements one by one
+    for i in range(n):
+        a_next = []
+        for number,amount in groupby(list(a1)):
+            a_next += [len(list(amount))]
+            a_next += [number]
+        a1 = a_next
+        result += [a_next]
+
     return result
 
 # initial data about the first element of the sequence and amount of elements
