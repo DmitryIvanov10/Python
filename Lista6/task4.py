@@ -1,7 +1,7 @@
 # Lesson6, Task4
 
 # constant for accuracy of calculations
-epsilon = 0.01
+epsilon = 0.0001
 
 def horner_polynom(value, coefficients):
     """Calculate polynom value with Horner algorythm
@@ -34,7 +34,7 @@ while run:
             # print results
             print ("Zero point is {}".format(zero))
             print ("f({}) = {}".format(sides[i], \
-                   round(horner_polynom(sides[i], coefficients), 3)))
+                   round(horner_polynom(sides[i], coefficients), 6)))
             run = False
         
     # check if signs on two sides are different
