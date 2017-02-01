@@ -1,4 +1,5 @@
 """Module for numerical calculations"""
+from math import pi
 
 def g(_f, a, b, c):
     """Returns value of the function depending on a,b,c"""
@@ -115,3 +116,64 @@ def newton(_f, _a, _eps = 0.0001):
             return b, iterations
         else: 
             _a = b
+
+def simpson(_f, _a, _b, n = 20, _eps = 0.0001):
+    """Finds numerically definite integral of function in the interval [_a, _b]
+    with precision _eps and returns the value of the integral"""
+    """By default amount of nodes is 20"""
+    
+    # calculate step
+    h = (_b - _a) / (n - 1)  
+
+    # variable for the result value
+    result = 0
+
+    # main loop
+    for i in range(n):
+        # first or last element
+        if i==0 or i==n-1:
+            result += _f(_a)
+        # odd element
+        elif i % 2 == 1:
+            result += 4 * _f(_a)
+        # even element    
+        else:
+            result += 2 * _f(_a)
+        # do step
+        _a += h
+
+    return result * h / 3
+
+def trapeze(_f, _a, _b, n = 20, _eps = 0.0001):
+    """Simpson method to calculate definite integral numerically"""
+    """Finds numerically definite integral of function in the interval [_a, _b]
+    with precision _eps and returns the value of the integral"""
+    """By default amount of nodes is 20"""
+    
+    # calculate step
+    h = (_b - _a) / (n - 1)  
+
+    # variable for the result value
+    result = 0
+
+    # main loop
+    for i in range(n):
+        # first or last element
+        if i==0 or i==n-1:
+            result += 0.5 * _f(_a)
+        # other elements
+        else:
+            result += _f(_a)
+        # do step
+        _a += h
+
+    return result * h
+
+def rad_to_grad(_alpha):
+    """Changes angle in radians into grads"""
+    return _alpha * 180 / pi
+
+def grad_to_rad(_alpha):
+    """Changes angle in radians into grads"""
+    return _alpha * pi / 180
+
