@@ -1,4 +1,5 @@
 """Module for numerical calculations"""
+import numpy as np
 from math import pi
 
 def g(_f, a, b, c):
@@ -177,3 +178,17 @@ def grad_to_rad(_alpha):
     """Changes angle in radians into grads"""
     return _alpha * pi / 180
 
+def gauss_legendre_integral(_f, _a, _b, _n):
+    """Calculates and returns integral by Gauss-Legendre quadratures method 
+    for function _f in interval of [_a, _b] and for n = _n""" 
+    # calculate abscissae and weights
+    x, c = np.polynomial.legendre.leggauss(_n)
+
+    # change interval from [-1, 1] to [_a, _b]
+    t = []
+    s = 0
+    for i in range(len(x)):
+        t.append(0.5 * (_b - _a) * x[i] + 0.5 * (_b + _a))
+        s += _f(t[i])*c[i]
+
+    return 0.5 * (_b - _a) * s
